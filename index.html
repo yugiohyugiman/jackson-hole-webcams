@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackson Hole Live Webcams Dashboard</title>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-color: #ffffff;
+            --accent-color: #f39c12;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        .webcam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 500px) {
+            .webcam-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cam-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .cam-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .cam-info {
+            padding: 15px;
+        }
+
+        .cam-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+
+        .cam-location {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 5px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jackson Hole Live Webcams</h1>
+        <p class="subtitle">Real-time views from around the valley and mountain resort</p>
+    </header>
+
+    <main class="webcam-grid">
+
+        <div class="cam-card">
+            <div class="video-container">
+                <iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=UC-S_W_Z9ZgS59gS7kEuxR3A&autoplay=1&mute=1" 
+                        title="Jackson Hole Town Square Live Cam" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="cam-info">
+                <p class="cam-title">Town Square (George Washington Memorial Park)</p>
+                <p class="cam-location">Downtown Jackson, WY</p>
+            </div>
+        </div>
+
+        <div class="cam-card">
+            <div class="video-container">
+                <iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCv9bXw6K_bWreZ_Lh6E99pA&autoplay=1&mute=1" 
+                        title="Jackson Hole Mountain Resort Base" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="cam-info">
+                <p class="cam-title">Rendezvous Mountain & Tram Base</p>
+                <p class="cam-location">Teton Village</p>
+            </div>
+        </div>
+
+        <div class="cam-card">
+            <div class="video-container">
+                <iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=UC5m_N27M_sC_O3gIuD_g_Sg&autoplay=1&mute=1" 
+                        title="Grand Teton View Live" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="cam-info">
+                <p class="cam-title">Grand Teton & Spring Creek Ranch Vista</p>
+                <p class="cam-location">East Gros Ventre Butte</p>
+            </div>
+        </div>
+
+        <div class="cam-card">
+            <div class="video-container">
+                <iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCJ3tIitn_8_N-4Gscy68b9g&autoplay=1&mute=1" 
+                        title="National Elk Refuge View" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="cam-info">
+                <p class="cam-title">National Elk Refuge & Sleeping Indian Mountain</p>
+                <p class="cam-location">Jackson Valley</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Streams are pulled dynamically from public YouTube live feeds. If a feed appears black or offline, the provider's live stream key may have cycled.</p>
+    </footer>
+
+</body>
+</html>
